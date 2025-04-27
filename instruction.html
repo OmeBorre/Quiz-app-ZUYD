@@ -1,45 +1,50 @@
-<html>
+<!DOCTYPE html>
+<html lang="nl">
     <head>
-        <title>Quiz</title>
+        <title>ICT Quiz - Instructies</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="quiz.css">
     </head>
     <body>
         <div class="container-fluid">
-                <div class="row">
-                        <div class="col-sm r"> 
-                            <div class="data">
-                                <div class="InstructionDiv">  
-                                    <p id="InstructionsHead">Instructions</p>
-                                    <p id="instr">1.There are 10 questions</p>
-                                    <p id="instr">2.Click on answer that you want</p>
-                                    <p id="instr">3.Go till end of the test</p>
-                                    <p id="instr">4.Click on the submit and check the result</p>
-                                </div>
-                                <div>
-                                    <a href="index1.html" id="link"><button type="button" class="Startbtn">Get Started</button></a>
-                                </div>
+            <div class="row">
+                <div class="col-sm r"> 
+                    <div class="data">
+                        <div class="InstructionDiv">  
+                            <h2 id="InstructionsHead"><i class="fas fa-info-circle mr-2"></i> Instructies</h2>
+                            <div class="instruction-list">
+                                <p id="instr"><i class="fas fa-check-circle mr-2"></i> Er zijn 30 ICT-gerelateerde vragen</p>
+                                <p id="instr"><i class="fas fa-check-circle mr-2"></i> Klik op het antwoord dat je denkt dat correct is</p>
+                                <p id="instr"><i class="fas fa-check-circle mr-2"></i> Je hebt 15 minuten om alle vragen te beantwoorden</p>
+                                <p id="instr"><i class="fas fa-check-circle mr-2"></i> Klik op 'Versturen' aan het einde om je score te zien</p>
                             </div>
-                        </div>   
-              </div>
+                        </div>
+                        <div class="text-center">
+                            <a href="index1.html" id="link"><button type="button" class="Startbtn"><i class="fas fa-play-circle mr-2"></i> Start Quiz</button></a>
+                        </div>
+                    </div>
+                </div>   
+            </div>
         </div> 
     </body>  
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 </html>

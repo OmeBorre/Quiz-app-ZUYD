@@ -1,136 +1,387 @@
- :root{
-      --color-1:18214A;
-      --color-2:4B4B71; 
-      --color-3:white;
-  }
-  .body
-  {
-      margin: 0px;
-      padding: 0px;
-  }
-  .timer
-  {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  #name,#Result
- {
-      font-size: 3rem;
-      color: white;
-      font-weight: bold;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      margin: 12;
- }
- .Startbtn
- {
-      background-color: var(--color-2);
-      border-radius: 20px;
-      width: 180px;
-      height: 45px;
-      font-family: Roboto;
-      color:var(--color-3);
-      font-size: 25px;
-      outline: none;
+:root {
+    --color-1: #2c3e50;
+    --color-2: #3498db;
+    --color-3: #ecf0f1;
+    --color-4: #e74c3c;
+    --color-5: #2ecc71;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+}
 
- }
- .Startbtn:hover
- {
-      background-color: var(--color-1);
- }
- .col-sm.r 
- {
-     margin: 0;
-     padding: 0;
-     background-color: var(--color-1);
-     background-repeat: no-repeat;
-     justify-content: center;
-     align-items: center;
-     display: flex;
-     height: 100vh;
- }
-.row
-{
-     height: 100vh;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-primary);
+    background-color: #f5f5f5;
 }
-#link,#image
-{
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      margin: 15;
-}
-.col-sm.r2
-{
-     margin: 0;
-     padding: 0;
-     background-color: var(--color-3);
-     justify-content: center;
-     align-items: center;
-     display: flex;
-     height: 100vh;
-}
-p
-{
-     display: contents;
-}
-#instr
-{
-      color: var(--color-3);
-      font-size: 2rem;
-      display: flex;
-}
-#InstructionsHead
-{
-      color:var(--color-3);
-      font-size: 3rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 35;
 
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--color-1);
+    margin: 0;
 }
-.btn
-{
-      width: 250;
-      height: 40;
-      left: 50.27px;
-      justify-content: center;
-      align-content: center;
-      border: 1px solid #3E8BD5;
-      box-sizing: border-box;
-      border-radius: 20px;
-      margin: 10;
-      outline: none;
+
+#name, #Result {
+    font-size: 2.5rem;
+    color: var(--color-1);
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
-.btn:hover 
-{
-      background-color: var(--color-1) ;
-      color: var(--color-3);
-      text-decoration: none;
-      outline: none;
+
+.Startbtn {
+    background-color: var(--color-2);
+    border: none;
+    border-radius: 40px;
+    width: 300px;
+    height: 70px;
+    font-family: var(--font-primary);
+    color: var(--color-3);
+    font-size: 1.6rem;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
 }
-.option1
-{
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      outline: none;
+
+.Nextbtn {
+    background-color: var(--color-5);
+    border: none;
+    border-radius: 30px;
+    width: 250px;
+    height: 60px;
+    font-family: var(--font-primary);
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 15px;
 }
-.InstructionDiv
-{
-      margin-bottom: 40;
+
+.Startbtn:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
-#que
-{
-      font-size: 30;
+
+.Nextbtn:hover {
+    background-color: #27ae60;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
-#QuestionNo
-{
-      font-size: 20;
-      justify-content: center;
-      align-items: center;
-      display: flex;
+
+.col-sm.r {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-1);
+    background-image: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.col-sm.r::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+    background-size: 30px 30px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.row {
+    height: 100vh;
+}
+
+#link, #image {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 1.5rem auto;
+    width: 100%;
+    text-align: center;
+}
+
+#image {
+    margin: 3.5rem auto;
+    display: block;
+    width: 450px;
+    height: 450px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+}
+
+.col-sm.r2 {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-1);
+    background-image: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.col-sm.r2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+    background-size: 30px 30px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+p {
+    display: contents;
+}
+
+.InstructionDiv {
+    margin-bottom: 5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5rem;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    max-width: 1300px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#instr {
+    color: var(--color-1);
+    font-size: 2.6rem;
+    display: flex;
+    margin: 2rem 0;
+    line-height: 2.2;
+}
+
+#instr i {
+    margin-right: 2.5rem;
+    color: var(--color-2);
+    font-size: 2.8rem;
+}
+
+#InstructionsHead {
+    color: var(--color-1);
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    min-height: 80px;
+    justify-content: center;
+    align-content: center;
+    border: 3px solid var(--color-2);
+    box-sizing: border-box;
+    border-radius: 40px;
+    margin: 1.5rem 0;
+    outline: none;
+    background-color: white;
+    color: var(--color-1);
+    font-size: 1.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 20px 25px;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.btn:hover {
+    background-color: var(--color-2);
+    color: var(--color-3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.option1 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    outline: none;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.question-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 2.5rem 0;
+    padding: 0 1.5rem;
+}
+
+#que {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--color-1);
+    margin: 0;
+    text-align: center;
+    line-height: 1.6;
+    max-width: 900px;
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+#QuestionNo {
+    font-size: 1.8rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--color-1);
+    margin: 0;
+    text-align: center;
+}
+
+#queno {
+    font-weight: bold;
+    color: var(--color-2);
+    margin: 0 0.3rem;
+}
+
+.data {
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    max-width: 1000px;
+    width: 98%;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.options {
+    margin: 1.5rem 0;
+}
+
+#result {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--color-2);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.options-container {
+    margin: 2.5rem 0;
+    width: 100%;
+}
+
+.quiz-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.timer-container {
+    padding: 0.8rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.question-counter {
+    padding: 0.8rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.text-center {
+    margin-bottom: 3rem;
+}
+
+#name {
+    font-size: 3.5rem;
+    color: var(--color-1);
+    font-weight: bold;
+    text-align: center;
+    margin: 2rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.lead {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    color: var(--color-1);
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .data {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    #que {
+        font-size: 1.3rem;
+    }
+    
+    .btn {
+        height: 45px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+    }
+    
+    .Nextbtn {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
 }

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Eenvoudige Quiz Test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="quiz.css">
+    <style>
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .form-group input {
+            font-family: 'Open Sans', sans-serif;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        .test-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            display: block;
+        }
+        .test-button:hover {
+            background-color: #45a049;
+        }
+        .result-item {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid #4CAF50;
+        }
+        .stats {
+            background-color: #e9f7ef;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .alert-success {
+            color: #3c763d;
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+        }
+        .alert-danger {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+        h1, h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">  
+            <img src='logo.png' width="80" height="80" id="image" alt="Quiz Logo">
+        </div>
+        <h1>ICT Quiz Test</h1>
+        
+        <div class="form-container">
+            <h2>Voeg Quiz Resultaat Toe</h2>
+            <div class="form-group">
+                <label for="userId">Gebruikers-ID:</label>
+                <input type="text" id="userId" placeholder="Bijv. user123">
+            </div>
+            <div class="form-group">
+                <label for="totalScore">Score:</label>
+                <input type="number" id="totalScore" min="0" max="30" placeholder="Bijv. 25">
+            </div>
+            <div class="form-group">
+                <label for="timeSpent">Tijd (in seconden):</label>
+                <input type="number" id="timeSpent" min="0" placeholder="Bijv. 750">
+            </div>
+            <button id="test-button" class="test-button">
+                <i class="fas fa-plus-circle mr-2"></i> Voeg Resultaat Toe
+            </button>
+        </div>
+        
+        <div class="results" id="results-container">
+            <h2>Resultaten</h2>
+            <p class="text-center">Klik op de knop hierboven om resultaten toe te voegen.</p>
+        </div>
+        
+        <div class="stats" id="stats-container">
+            <h2>Statistieken</h2>
+            <p class="text-center">Statistieken worden hier weergegeven na het toevoegen van resultaten.</p>
+        </div>
+    </div>
+
+    <script>
+        // Controleer of het JSON-bestand bestaat
+        async function checkJsonFile() {
+            try {
+                const response = await fetch('user-results.json');
+                if (!response.ok) {
+                    throw new Error('Bestand niet gevonden');
+                }
+                return true;
+            } catch (error) {
+                console.error('Fout bij het controleren van het JSON-bestand:', error);
+                return false;
+            }
+        }
+
+        // Maak een nieuw JSON-bestand als het niet bestaat
+        async function createJsonFile() {
+            const initialData = {
+                results: [],
+                statistics: {
+                    totalAttempts: 0,
+                    averageScore: 0,
+                    highestScore: 0,
+                    lowestScore: 30,
+                    averageTimeSpent: 0,
+                    mostDifficultCategory: "Geen data",
+                    mostDifficultQuestion: 0
+                }
+            };
+
+            try {
+                // In een echte applicatie zou je hier een server-aanroep doen
+                // Voor deze test tonen we alleen een bericht
+                console.log('Nieuw JSON-bestand zou worden gemaakt met:', initialData);
+                return initialData;
+            } catch (error) {
+                console.error('Fout bij het maken van het JSON-bestand:', error);
+                return null;
+            }
+        }
+
+        // Laad de resultaten uit het JSON-bestand
+        async function loadResults() {
+            try {
+                const jsonExists = await checkJsonFile();
+                let data;
+                
+                if (!jsonExists) {
+                    console.log('JSON-bestand bestaat niet, maak een nieuw bestand aan');
+                    data = await createJsonFile();
+                    if (!data) {
+                        throw new Error('Kon geen nieuw JSON-bestand maken');
+                    }
+                } else {
+                    const response = await fetch('user-results.json');
+                    data = await response.json();
+                }
+                
+                displayResults(data.results);
+                displayStats(data.statistics);
+            } catch (error) {
+                console.error('Fout bij het laden van resultaten:', error);
+                document.getElementById('results-container').innerHTML = 
+                    '<h2>Resultaten</h2><div class="alert alert-danger">Fout bij het laden van resultaten. Controleer of het bestand bestaat.</div>';
+            }
+        }
+
+        // Toon de resultaten
+        function displayResults(results) {
+            const container = document.getElementById('results-container');
+            container.innerHTML = '<h2>Resultaten</h2>';
+            
+            if (!results || results.length === 0) {
+                container.innerHTML += '<p>Geen resultaten gevonden.</p>';
+                return;
+            }
+            
+            results.forEach(result => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'result-item';
+                resultItem.innerHTML = `
+                    <h3>Gebruiker: ${result.userId}</h3>
+                    <p>Score: ${result.totalScore}/${result.totalQuestions}</p>
+                    <p>Tijd: ${Math.floor(result.timeSpent / 60)}:${(result.timeSpent % 60).toString().padStart(2, '0')}</p>
+                `;
+                container.appendChild(resultItem);
+            });
+        }
+
+        // Toon statistieken
+        function displayStats(stats) {
+            const container = document.getElementById('stats-container');
+            container.innerHTML = `
+                <h2>Statistieken</h2>
+                <p>Totaal pogingen: ${stats.totalAttempts}</p>
+                <p>Gemiddelde score: ${stats.averageScore.toFixed(1)}</p>
+                <p>Hoogste score: ${stats.highestScore}</p>
+                <p>Laagste score: ${stats.lowestScore}</p>
+                <p>Gemiddelde tijd: ${Math.floor(stats.averageTimeSpent / 60)}:${(stats.averageTimeSpent % 60).toString().padStart(2, '0')}</p>
+            `;
+        }
+
+        // Genereer willekeurige antwoorden
+        function generateRandomAnswers() {
+            const answers = [];
+            for (let i = 1; i <= 5; i++) {
+                const selectedAnswer = Math.floor(Math.random() * 4);
+                const correct = Math.random() > 0.3; // 70% kans op correct antwoord
+                const timeSpent = Math.floor(Math.random() * 20) + 10;
+                
+                answers.push({
+                    questionId: i,
+                    selectedAnswer: selectedAnswer,
+                    correct: correct,
+                    timeSpent: timeSpent
+                });
+            }
+            return answers;
+        }
+
+        // Genereer willekeurige categorieën
+        function generateRandomCategories() {
+            return {
+                "Hardware": {
+                    "correct": Math.floor(Math.random() * 11),
+                    "total": 10
+                },
+                "Software": {
+                    "correct": Math.floor(Math.random() * 9),
+                    "total": 8
+                },
+                "Netwerken": {
+                    "correct": Math.floor(Math.random() * 8),
+                    "total": 7
+                },
+                "Beveiliging": {
+                    "correct": Math.floor(Math.random() * 6),
+                    "total": 5
+                }
+            };
+        }
+
+        // Voeg een test resultaat toe
+        document.getElementById('test-button').addEventListener('click', function() {
+            // Haal de waarden op uit het formulier
+            const userId = document.getElementById('userId').value || 'user' + Math.floor(Math.random() * 1000);
+            const totalScore = parseInt(document.getElementById('totalScore').value) || Math.floor(Math.random() * 16) + 15;
+            const timeSpent = parseInt(document.getElementById('timeSpent').value) || Math.floor(Math.random() * 301) + 600;
+            
+            // Maak een nieuw resultaat object
+            const newResult = {
+                userId: userId,
+                timestamp: new Date().toISOString(),
+                totalScore: totalScore,
+                totalQuestions: 30,
+                timeSpent: timeSpent,
+                completed: true,
+                answers: generateRandomAnswers(),
+                categories: generateRandomCategories()
+            };
+            
+            // Stuur het resultaat naar de PHP-script
+            fetch('save-results.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newResult)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Netwerk response was niet ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Toon een succesbericht
+                const resultsContainer = document.getElementById('results-container');
+                const successAlert = document.createElement('div');
+                successAlert.className = 'alert alert-success';
+                successAlert.innerHTML = `Resultaat succesvol opgeslagen: ${data.message}`;
+                resultsContainer.insertBefore(successAlert, resultsContainer.firstChild.nextSibling);
+                
+                // Verwijder het succesbericht na 5 seconden
+                setTimeout(() => {
+                    successAlert.remove();
+                }, 5000);
+                
+                // Herlaad de resultaten
+                loadResults();
+            })
+            .catch(error => {
+                console.error('Fout bij het opslaan van het resultaat:', error);
+                
+                // Toon een foutmelding
+                const resultsContainer = document.getElementById('results-container');
+                const errorAlert = document.createElement('div');
+                errorAlert.className = 'alert alert-danger';
+                errorAlert.innerHTML = 'Fout bij het opslaan van het resultaat: ' + error.message;
+                resultsContainer.insertBefore(errorAlert, resultsContainer.firstChild.nextSibling);
+                
+                // Verwijder de foutmelding na 5 seconden
+                setTimeout(() => {
+                    errorAlert.remove();
+                }, 5000);
+            });
+        });
+
+        // Laad de resultaten bij het laden van de pagina
+        document.addEventListener('DOMContentLoaded', loadResults);
+    </script>
+</body>
+</html> 

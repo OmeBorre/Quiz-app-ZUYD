@@ -1,62 +1,302 @@
 {
 	"q1": {
-		"question": "Which one is correct team name in NBA?",
+		"question": "Wat is de functie van een CPU in een computer?",
 		"options": [
-			"New York Bulls",
-			"Los Angeles Kings",
-			"Golden State Warriros",
-			"Huston Rocket"
+			"Opslaan van gegevens",
+			"Verwerken van gegevens",
+			"Weergeven van afbeeldingen",
+			"Verbinding maken met internet"
 		],
-		"answer": "Huston Rocket"
+		"answer": "Verwerken van gegevens"
 	},
 	"q2": {
-		"question": "Which one is WRONG team name in NBA?",
+		"question": "Welke programmeertaal wordt vaak gebruikt voor webontwikkeling?",
 		"options": [
-			"New York Bulls",
-			"Los Angeles Kings",
-			"Golden State Warriros",
-			"Huston Rocket"
+			"Java",
+			"Python",
+			"JavaScript",
+			"C++"
 		],
-		"answer": "Huston Rocket"
+		"answer": "JavaScript"
 	},
 	"q3": {
-		"question": "Which is the financial capital of India?",
+		"question": "Wat is een firewall?",
 		"options": [
-			"Mumbai",
-			"Pune",
-			"Delhi",
-			"Goa"
+			"Een antivirusprogramma",
+			"Een beveiligingssysteem dat netwerkverkeer filtert",
+			"Een type computer",
+			"Een besturingssysteem"
 		],
-		"answer": "Mumbai"
+		"answer": "Een beveiligingssysteem dat netwerkverkeer filtert"
 	},
 	"q4": {
-		"question": "Which is the capital of India?",
+		"question": "Wat betekent HTML?",
 		"options": [
-			"Mumbai",
-			"Pune",
-			"Delhi",
-			"Goa"
+			"Hyper Text Markup Language",
+			"High Tech Modern Language",
+			"Hyper Transfer Markup Language",
+			"Home Tool Markup Language"
 		],
-		"answer": "Delhi"
+		"answer": "Hyper Text Markup Language"
 	},
 	"q5": {
-		"question": "Who is the father of India?",
+		"question": "Wat is een API?",
 		"options": [
-			"Mahatma Gandhi",
-			"Javaharlal Neharu",
-			"Subhashchandra Bos",
-			"Lokmany Tilak"
+			"Een besturingssysteem",
+			"Een applicatie voor het maken van afbeeldingen",
+			"Een interface waarmee verschillende softwareprogramma's met elkaar kunnen communiceren",
+			"Een type computer"
 		],
-		"answer": "Mahatma Gandhi"
+		"answer": "Een interface waarmee verschillende softwareprogramma's met elkaar kunnen communiceren"
 	},
 	"q6": {
-		"question": "Who is the Prime Minister of India?",
+		"question": "Wat is cloud computing?",
 		"options": [
-			"Nitin Gadakri",
-			"Atal bihari Vajpey",
-			"Amit Shaha",
-			"Narendra Modi"
+			"Een type computer",
+			"Een webbrowser",
+			"Het leveren van computerdiensten via internet",
+			"Een besturingssysteem"
 		],
-		"answer": "Narendra Modi"
+		"answer": "Het leveren van computerdiensten via internet"
+	},
+	"q7": {
+		"question": "Wat is een VPN?",
+		"options": [
+			"Een virtueel privénetwerk dat een veilige verbinding biedt",
+			"Een type computer",
+			"Een antivirusprogramma",
+			"Een besturingssysteem"
+		],
+		"answer": "Een virtueel privénetwerk dat een veilige verbinding biedt"
+	},
+	"q8": {
+		"question": "Wat is een database?",
+		"options": [
+			"Een type computer",
+			"Een georganiseerde verzameling van gegevens",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Een georganiseerde verzameling van gegevens"
+	},
+	"q9": {
+		"question": "Wat is een algoritme?",
+		"options": [
+			"Een type computer",
+			"Een stap-voor-stap procedure om een probleem op te lossen",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Een stap-voor-stap procedure om een probleem op te lossen"
+	},
+	"q10": {
+		"question": "Wat is een bug in programmeren?",
+		"options": [
+			"Een type computer",
+			"Een fout in de code die onverwacht gedrag veroorzaakt",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Een fout in de code die onverwacht gedrag veroorzaakt"
+	},
+	"q11": {
+		"question": "Wat is een besturingssysteem?",
+		"options": [
+			"Een programma dat de hardware van een computer beheert",
+			"Een type computer",
+			"Een webbrowser",
+			"Een antivirusprogramma"
+		],
+		"answer": "Een programma dat de hardware van een computer beheert"
+	},
+	"q12": {
+		"question": "Wat is een pixel?",
+		"options": [
+			"Een type computer",
+			"Het kleinste element van een digitaal beeld",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Het kleinste element van een digitaal beeld"
+	},
+	"q13": {
+		"question": "Wat is een URL?",
+		"options": [
+			"Een type computer",
+			"Een webadres dat de locatie van een webpagina aangeeft",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Een webadres dat de locatie van een webpagina aangeeft"
+	},
+	"q14": {
+		"question": "Wat is een cookie op internet?",
+		"options": [
+			"Een type computer",
+			"Een klein bestand dat websites op je computer opslaan",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Een klein bestand dat websites op je computer opslaan"
+	},
+	"q15": {
+		"question": "Wat is een browser?",
+		"options": [
+			"Een type computer",
+			"Een programma om webpagina's te bekijken",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Een programma om webpagina's te bekijken"
+	},
+	"q16": {
+		"question": "Wat is een server?",
+		"options": [
+			"Een type computer",
+			"Een computer die diensten levert aan andere computers",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Een computer die diensten levert aan andere computers"
+	},
+	"q17": {
+		"question": "Wat is een IP-adres?",
+		"options": [
+			"Een type computer",
+			"Een uniek adres dat een apparaat op internet identificeert",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Een uniek adres dat een apparaat op internet identificeert"
+	},
+	"q18": {
+		"question": "Wat is een router?",
+		"options": [
+			"Een type computer",
+			"Een apparaat dat netwerkverkeer tussen verschillende netwerken doorstuurt",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Een apparaat dat netwerkverkeer tussen verschillende netwerken doorstuurt"
+	},
+	"q19": {
+		"question": "Wat is een modem?",
+		"options": [
+			"Een type computer",
+			"Een apparaat dat digitale gegevens omzet naar analoge signalen en vice versa",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Een apparaat dat digitale gegevens omzet naar analoge signalen en vice versa"
+	},
+	"q20": {
+		"question": "Wat is een bestandsextensie?",
+		"options": [
+			"Een type computer",
+			"De laatste letters van een bestandsnaam die het bestandstype aangeven",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "De laatste letters van een bestandsnaam die het bestandstype aangeven"
+	},
+	"q21": {
+		"question": "Wat is een bestandsformaat?",
+		"options": [
+			"Een type computer",
+			"De manier waarop gegevens in een bestand zijn opgeslagen",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "De manier waarop gegevens in een bestand zijn opgeslagen"
+	},
+	"q22": {
+		"question": "Wat is een bestandscompressie?",
+		"options": [
+			"Een type computer",
+			"Het verkleinen van de bestandsgrootte door gegevens efficiënter op te slaan",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Het verkleinen van de bestandsgrootte door gegevens efficiënter op te slaan"
+	},
+	"q23": {
+		"question": "Wat is een bestandsback-up?",
+		"options": [
+			"Een type computer",
+			"Een kopie van gegevens die wordt bewaard voor het geval het origineel verloren gaat",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Een kopie van gegevens die wordt bewaard voor het geval het origineel verloren gaat"
+	},
+	"q24": {
+		"question": "Wat is een bestandsrechten?",
+		"options": [
+			"Een type computer",
+			"Instellingen die bepalen wie een bestand mag openen, wijzigen of verwijderen",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Instellingen die bepalen wie een bestand mag openen, wijzigen of verwijderen"
+	},
+	"q25": {
+		"question": "Wat is een bestandsmap?",
+		"options": [
+			"Een type computer",
+			"Een container waarin bestanden en andere mappen kunnen worden opgeslagen",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Een container waarin bestanden en andere mappen kunnen worden opgeslagen"
+	},
+	"q26": {
+		"question": "Wat is een bestandspad?",
+		"options": [
+			"Een type computer",
+			"De locatie van een bestand in het bestandssysteem",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "De locatie van een bestand in het bestandssysteem"
+	},
+	"q27": {
+		"question": "Wat is een bestandsnaam?",
+		"options": [
+			"Een type computer",
+			"De naam die aan een bestand is gegeven om het te identificeren",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "De naam die aan een bestand is gegeven om het te identificeren"
+	},
+	"q28": {
+		"question": "Wat is een bestandsgrootte?",
+		"options": [
+			"Een type computer",
+			"De hoeveelheid ruimte die een bestand inneemt op een opslagmedium",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "De hoeveelheid ruimte die een bestand inneemt op een opslagmedium"
+	},
+	"q29": {
+		"question": "Wat is een bestandsdatum?",
+		"options": [
+			"Een type computer",
+			"De datum waarop een bestand is aangemaakt of voor het laatst is gewijzigd",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "De datum waarop een bestand is aangemaakt of voor het laatst is gewijzigd"
+	},
+	"q30": {
+		"question": "Wat is een bestandsattribuut?",
+		"options": [
+			"Een type computer",
+			"Een eigenschap van een bestand zoals alleen-lezen of verborgen",
+			"Een besturingssysteem",
+			"Een type software"
+		],
+		"answer": "Een eigenschap van een bestand zoals alleen-lezen of verborgen"
 	}
 }

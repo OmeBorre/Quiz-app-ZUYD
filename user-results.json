@@ -1,0 +1,129 @@
+{
+  "results": [
+    {
+      "userId": "user123",
+      "timestamp": "2023-11-15T14:30:22",
+      "totalScore": 25,
+      "totalQuestions": 30,
+      "timeSpent": 780,
+      "completed": true,
+      "answers": [
+        {
+          "questionId": 1,
+          "selectedAnswer": 1,
+          "correct": true,
+          "timeSpent": 25
+        },
+        {
+          "questionId": 2,
+          "selectedAnswer": 0,
+          "correct": true,
+          "timeSpent": 18
+        },
+        {
+          "questionId": 3,
+          "selectedAnswer": 2,
+          "correct": true,
+          "timeSpent": 30
+        },
+        {
+          "questionId": 4,
+          "selectedAnswer": 1,
+          "correct": true,
+          "timeSpent": 22
+        },
+        {
+          "questionId": 5,
+          "selectedAnswer": 0,
+          "correct": true,
+          "timeSpent": 15
+        }
+      ],
+      "categories": {
+        "Hardware": {
+          "correct": 8,
+          "total": 10
+        },
+        "Software": {
+          "correct": 7,
+          "total": 8
+        },
+        "Netwerken": {
+          "correct": 6,
+          "total": 7
+        },
+        "Beveiliging": {
+          "correct": 4,
+          "total": 5
+        }
+      }
+    },
+    {
+      "userId": "user456",
+      "timestamp": "2023-11-16T09:15:45",
+      "totalScore": 18,
+      "totalQuestions": 30,
+      "timeSpent": 850,
+      "completed": true,
+      "answers": [
+        {
+          "questionId": 1,
+          "selectedAnswer": 1,
+          "correct": true,
+          "timeSpent": 20
+        },
+        {
+          "questionId": 2,
+          "selectedAnswer": 1,
+          "correct": false,
+          "timeSpent": 25
+        },
+        {
+          "questionId": 3,
+          "selectedAnswer": 3,
+          "correct": false,
+          "timeSpent": 30
+        },
+        {
+          "questionId": 4,
+          "selectedAnswer": 1,
+          "correct": true,
+          "timeSpent": 22
+        },
+        {
+          "questionId": 5,
+          "selectedAnswer": 2,
+          "correct": false,
+          "timeSpent": 18
+        }
+      ],
+      "categories": {
+        "Hardware": {
+          "correct": 5,
+          "total": 10
+        },
+        "Software": {
+          "correct": 4,
+          "total": 8
+        },
+        "Netwerken": {
+          "correct": 5,
+          "total": 7
+        },
+        "Beveiliging": {
+          "correct": 4,
+          "total": 5
+        }
+      }
+    }
+  ],
+  "statistics": {
+    "totalAttempts": 2,
+    "averageScore": 21.5,
+    "highestScore": 25,
+    "lowestScore": 18,
+    "averageTimeSpent": 815,
+    "mostDifficultCategory": "Beveiliging",
+    "mostDifficultQuestion": 3
+  }
+} 
