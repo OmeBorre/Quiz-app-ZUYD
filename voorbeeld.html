@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <title>Eenvoudige Quiz Test</title>
+    <title>Eenvoudige Quiz Resultaten</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
@@ -109,7 +109,7 @@
 <body>
     <div class="container">
         <div class="text-center">  
-            <img src='logo.png' width="80" height="80" id="image" alt="Quiz Logo">
+            <img src='logo.png' style="width: 180px; height: 180px;" id="image" alt="Quiz Logo">
         </div>
         <h1>ICT Quiz Test</h1>
         
@@ -187,20 +187,11 @@
         // Laad de resultaten uit het JSON-bestand
         async function loadResults() {
             try {
-                const jsonExists = await checkJsonFile();
-                let data;
-                
-                if (!jsonExists) {
-                    console.log('JSON-bestand bestaat niet, maak een nieuw bestand aan');
-                    data = await createJsonFile();
-                    if (!data) {
-                        throw new Error('Kon geen nieuw JSON-bestand maken');
-                    }
-                } else {
-                    const response = await fetch('user-results.json');
-                    data = await response.json();
+                const response = await fetch('user-results.json');
+                if (!response.ok) {
+                    throw new Error('Fout bij het laden van resultaten');
                 }
-                
+                const data = await response.json();
                 displayResults(data.results);
                 displayStats(data.statistics);
             } catch (error) {
@@ -289,8 +280,8 @@
         document.getElementById('test-button').addEventListener('click', function() {
             // Haal de waarden op uit het formulier
             const userId = document.getElementById('userId').value || 'user' + Math.floor(Math.random() * 1000);
-            const totalScore = parseInt(document.getElementById('totalScore').value) || Math.floor(Math.random() * 16) + 15;
-            const timeSpent = parseInt(document.getElementById('timeSpent').value) || Math.floor(Math.random() * 301) + 600;
+            const totalScore = parseInt(document.getElementById('totalScore').value) || 0;
+            const timeSpent = parseInt(document.getElementById('timeSpent').value) || 0;
             
             // Maak een nieuw resultaat object
             const newResult = {
@@ -326,13 +317,13 @@
                 successAlert.innerHTML = `Resultaat succesvol opgeslagen: ${data.message}`;
                 resultsContainer.insertBefore(successAlert, resultsContainer.firstChild.nextSibling);
                 
+                // Herlaad de resultaten
+                loadResults();
+                
                 // Verwijder het succesbericht na 5 seconden
                 setTimeout(() => {
                     successAlert.remove();
                 }, 5000);
-                
-                // Herlaad de resultaten
-                loadResults();
             })
             .catch(error => {
                 console.error('Fout bij het opslaan van het resultaat:', error);
