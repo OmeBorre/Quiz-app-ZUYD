@@ -1,5 +1,3 @@
-<!-- Author:Aadesh Nichite
-Name:Quiz Application -->
 <!DOCTYPE html>
 <html lang="nl">
     <head>
@@ -21,38 +19,35 @@ Name:Quiz Application -->
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm r2">  
-                    <div class="data">  
-                        <div class="quiz-header">
-                            <div class="timer-container">
-                                <p id="timer" class="timer"><i class="fas fa-clock mr-2"></i> 15:00</p>
-                            </div>
-                            <div class="question-counter">
-                                <text id="QuestionNo">Vraag <p id="queno">1</p> van 30</text>
-                            </div>
+                <div class="col-sm r"> 
+                    <div class="data">
+                        <div class="QuestionDiv">
+                            <h2 id="QuestionHead"><i class="fas fa-question-circle mr-2"></i> Vraag <span id="QuestionNumber">1</span></h2>
+                            <p id="QuestionText">Laden...</p>
                         </div>
-                        <div class="question-container">
-                            <p id="que">Wat is de functie van een CPU in een computer?</p>
-                        </div>
-                        <div class="options-container">
-                            <div class="options" id="answer-select">
-                                <div class="option1"><button id="value1" class="btn" onclick="process(value1);">Opslaan van gegevens</button></div>
-                                <div class="option1"><button id="value2" class="btn" onclick="process(value2);">Verwerken van gegevens</button></div>
-                                <div class="option1"><button id="value3" class="btn" onclick="process(value3);">Weergeven van afbeeldingen</button></div>
-                                <div class="option1"><button id="value4" class="btn" onclick="process(value4);">Verbinding maken met internet</button></div>
+                        <div class="AnswerDiv">
+                            <div class="answer-options">
+                                <button class="answer-btn" id="answer1" onclick="process(this)">Laden...</button>
+                                <button class="answer-btn" id="answer2" onclick="process(this)">Laden...</button>
+                                <button class="answer-btn" id="answer3" onclick="process(this)">Laden...</button>
+                                <button class="answer-btn" id="answer4" onclick="process(this)">Laden...</button>
                             </div>
                         </div>
-                        <div class="text-center mt-4">
-                            <a href="index2.html" id="link"><button type="button" class="Startbtn"><i class="fas fa-check-circle mr-2"></i> Versturen</button></a>
+                        <div class="timer-container">
+                            <div class="timer">
+                                <i class="fas fa-clock"></i>
+                                <span id="time">10:00</span>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a href="result.html" id="link"><button type="button" class="Startbtn"><i class="fas fa-paper-plane mr-2"></i> Versturen</button></a>
                         </div>
                     </div>
-                </div>
+                </div>   
             </div>
-        </div>
-    </body>
-    <script src="quiz.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        </div> 
+        <script src="quiz.js"></script>
+    </body>  
 </html>
 
 
