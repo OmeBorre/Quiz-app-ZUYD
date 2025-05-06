@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <title>ICT Quiz - Vragen</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="quiz.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm r"> 
+                    <div class="data">
+                        <div class="QuestionDiv">
+                            <h2 id="QuestionHead"><i class="fas fa-question-circle mr-2"></i> Vraag <span id="QuestionNumber">1</span></h2>
+                            <p id="QuestionText">Laden...</p>
+                        </div>
+                        <div class="AnswerDiv">
+                            <div class="answer-options">
+                                <button class="answer-btn" id="answer1" onclick="process(this)">Laden...</button>
+                                <button class="answer-btn" id="answer2" onclick="process(this)">Laden...</button>
+                                <button class="answer-btn" id="answer3" onclick="process(this)">Laden...</button>
+                                <button class="answer-btn" id="answer4" onclick="process(this)">Laden...</button>
+                            </div>
+                        </div>
+                        <div class="timer-container">
+                            <div class="timer">
+                                <i class="fas fa-clock"></i>
+                                <span id="time">10:00</span>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a href="result.html" id="link"><button type="button" class="Startbtn"><i class="fas fa-paper-plane mr-2"></i> Versturen</button></a>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div> 
+        <script src="quiz.js"></script>
+    </body>  
+</html>
+
+
+
