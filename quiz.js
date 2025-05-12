@@ -20,7 +20,6 @@ $(document).ready(function() {
     let mark = 0; 
     sessionStorage.setItem("mark", mark);
     
-    // Start timer alleen op de quiz pagina
     if (!window.location.pathname.includes('result.html')) {
         startTimer();
     }
